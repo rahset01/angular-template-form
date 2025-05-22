@@ -1,0 +1,73 @@
+<form #form="ngForm" (ngSubmit)="onSubmit(form)" novalidate>
+
+  <label>Name:</label>
+  <input type="text" name="name" [(ngModel)]="formData.name" required #name="ngModel" />
+  <div *ngIf="formSubmitted && name.invalid" class="error">Name is required</div>
+
+  <label>Email:</label>
+  <input
+    type="email"
+    name="email"
+    [(ngModel)]="formData.email"
+    required
+    email
+    #email="ngModel"
+  />
+
+  <div *ngIf="formSubmitted && email.errors" class="error">
+    <span *ngIf="email.errors['required']">Email is required</span>
+    <span *ngIf="email.errors['email']">Please enter a valid email address</span>
+  </div>
+
+  <label>Age:</label>
+  <input type="number" name="age" [(ngModel)]="formData.age" min="1" required #age="ngModel" />
+  <div *ngIf="formSubmitted && age.invalid" class="error">Age must be greater than 0</div>
+
+  <label>Gender:</label>
+  <div class="gender-group">
+  <label><input type="radio" name="gender" [(ngModel)]="formData.gender" value="male" required /> Male</label>
+  <label><input type="radio" name="gender" [(ngModel)]="formData.gender" value="female" /> Female</label>
+  </div>
+  <div *ngIf="formSubmitted && !formData.gender" class="error">Select gender</div>
+
+  <label>Date of Birth:</label>
+  <input type="date" name="dob" [(ngModel)]="formData.dob" required #dob="ngModel" />
+  <div *ngIf="formSubmitted && dob.invalid" class="error">DOB is required</div>
+
+  <label>Country:</label>
+  <select name="country" [(ngModel)]="formData.country" required #country="ngModel">
+    <option value="">-- Select Country --</option>
+    <option value="india">India</option>
+    <option value="usa">USA</option>
+    <option value="uk">UK</option>
+  </select>
+  <div *ngIf="formSubmitted && country.invalid" class="error">Select a country</div>
+
+  <label>Upload File:</label>
+  <input type="file" (change)="onFileChange($event)" />
+
+  <label>Message:</label>
+  <textarea name="message" [(ngModel)]="formData.message" required minlength="10" #message="ngModel"></textarea>
+  <div *ngIf="formSubmitted && message.invalid" class="error">Message must be at least 10 characters</div>
+
+  <div class="terms-group">
+    <label>
+      <input
+        type="checkbox"
+        name="terms"
+        [(ngModel)]="formData.terms"
+        required
+        #terms="ngModel"
+      />
+      I accept the <a href="https://example.com/terms" target="_blank" rel="noopener">terms and conditions</a>
+    </label>
+  </div>
+
+  <div *ngIf="formSubmitted && terms.invalid" class="error">
+    You must accept the terms and conditions
+  </div>
+
+  <button type="submit">Submit</button>
+  <button type="button" (click)="onReset(form)">Reset</button>
+
+</form>
