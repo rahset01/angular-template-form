@@ -99,6 +99,7 @@
             ],
             "scripts": []
           }
+<<<<<<< HEAD
         },
         "deploy": {
           "builder": "angular-cli-ghpages:deploy"
@@ -108,5 +109,10 @@
   },
   "cli": {
     "analytics": false
+=======
+        }
+      }
+    }
+>>>>>>> 603009e (Rebase)
   }
 }
