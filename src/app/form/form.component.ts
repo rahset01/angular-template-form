@@ -16,7 +16,7 @@ export class FormComponent {
     age: '',
     dob: '',
     message: '',
-    country: '',
+    country: null,
     gender: '',
     terms: false,
     file: null
@@ -40,6 +40,12 @@ export class FormComponent {
   onFileChange(event: any) {
     const file = event?.target?.files[0];
     this.formData.file = file ? file?.name : null;
+  }
+
+  resetForm(form: NgForm) {
+    this.formData.country = null;
+    form.resetForm({ country: null });
+    this.formSubmitted = false;
   }
 }
 

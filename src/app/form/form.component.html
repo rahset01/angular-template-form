@@ -36,10 +36,10 @@
 
   <label>Country:</label>
   <select name="country" [(ngModel)]="formData.country" required #country="ngModel">
-    <option value="">-- Select Country --</option>
-    <option value="india">India</option>
-    <option value="usa">USA</option>
-    <option value="uk">UK</option>
+    <option [ngValue]="null" disabled>-- Select Country --</option>
+    <option [ngValue]="'india'">India</option>
+    <option [ngValue]="'usa'">USA</option>
+    <option [ngValue]="'uk'">UK</option>
   </select>
   <div *ngIf="formSubmitted && country.invalid" class="error">Select a country</div>
 
