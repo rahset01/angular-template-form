@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import { FormComponent } from './form/form.component';
 import { FormsModule } from '@angular/forms';
 
@@ -17,15 +18,25 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     FormsModule
 =======
+=======
+import { FormComponent } from './form/form.component';
+import { FormsModule } from '@angular/forms';
+>>>>>>> 34e1914 (Angular template driven forms)
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FormComponent
   ],
   imports: [
     BrowserModule,
+<<<<<<< HEAD
     AppRoutingModule
 >>>>>>> 603009e (Rebase)
+=======
+    AppRoutingModule,
+    FormsModule
+>>>>>>> 34e1914 (Angular template driven forms)
   ],
   providers: [],
   bootstrap: [AppComponent]
