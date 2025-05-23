@@ -99,6 +99,10 @@
             ],
             "scripts": []
           }
+<<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> 34e1914 (Angular template driven forms)
         },
         "deploy": {
           "builder": "angular-cli-ghpages:deploy"
@@ -108,5 +112,13 @@
   },
   "cli": {
     "analytics": false
+<<<<<<< HEAD
+=======
+        }
+      }
+    }
+>>>>>>> 603009e (Rebase)
+=======
+>>>>>>> 34e1914 (Angular template driven forms)
   }
 }
